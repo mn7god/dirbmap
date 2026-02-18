@@ -4,14 +4,14 @@ import argparse
 import requests
 import subprocess
 
-# Cores para o terminal
+
 r = "\033[0;91m"
 g = "\033[0;92m"
 w = "\033[0;97m"
 y = "\033[0;93m"
 
 def port_scanner(domain):
-    # Obtém o IP da URL fornecida
+
     ip = socket.gethostbyname(domain)
     ports_opened = []
     
@@ -25,7 +25,7 @@ def port_scanner(domain):
             print(f"{w}[{g}OPEN{w}] Port {y}{port}{w} is open on {y}{ip}{w} (domain: {y}{domain}{w})")
             interact_with_port(domain, ip, port)
         
-        s.close()  # fecha a conexão após a verificação
+        s.close() 
     
     print(f"{w}[{y}PORTS OPENED{w}] {ports_opened}") 
 
